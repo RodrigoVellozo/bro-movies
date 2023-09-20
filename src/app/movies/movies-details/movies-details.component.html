@@ -1,8 +1,6 @@
 
-<a routerLink="/">voltar</a>
+<a mat-button routerLink="/">voltar</a>
 
 <div>
-    <code>
-        {{movie$|async|json}}
-    </code>
+    <app-card [movie]="movie$|async"></app-card>
 </div>
