@@ -21,7 +21,7 @@ export class MovieService {
   constructor(private _http: HttpClient, private _snackbar: MatSnackBar) {}
 
   public getMovies(search?: string) {
-    if (!search) search = 'batman';
+    if (!search) search = 'one piece';
     return this._http.get<any>(`${this.API_URL}s=${search}`).pipe(
       map((res) => res.Search),
       catchError((err) => {

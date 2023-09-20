@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Observable, of, switchMap, tap } from 'rxjs';
-import { MovieService } from './service/movie.service';
+import { MovieService } from './shared/services/movie.service';
 
 @Component({
   selector: 'app-root',
