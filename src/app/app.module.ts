@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { SearchModule } from './shared/ui/search.module';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,9 +17,6 @@ import { SearchModule } from './shared/ui/search.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-
-    SearchModule,
-
     MatPaginatorModule,
     MatSnackBarModule,
   ],

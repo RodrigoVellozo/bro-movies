@@ -1,1 +1,23 @@
-<p>movies-list works!</p>
+
+<div
+  style="display: flex; flex-wrap: wrap; justify-content: center"
+  *ngIf="movies !== undefined; else emptyTemplate"
+>
+  <ul *ngFor="let movie of movies">
+    <li>
+      <article
+        style="display: flex; justify-content: center; flex-direction: column"
+      >
+        <section style="color: aliceblue;">
+          <a [routerLink]="['movie/',movie.imdbID]">
+            <img style="border-radius: 10px;" [src]="movie.Poster" width="150" alt="sem imagem" />
+          </a>
+        </section>
+      </article>
+    </li>
+  </ul>
+</div>
+
+<ng-template #emptyTemplate>
+  <app-error-message-content [title]="'Mulher maravilha'"></app-error-message-content>
+</ng-template>

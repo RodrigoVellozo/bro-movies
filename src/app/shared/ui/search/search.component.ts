@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormControl } from '@angular/forms';
 import { debounceTime, distinctUntilChanged } from 'rxjs';
 
@@ -6,6 +6,7 @@ import { debounceTime, distinctUntilChanged } from 'rxjs';
   selector: 'app-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SearchComponent implements OnInit {
   public searchForm = new FormControl();

@@ -1,0 +1,22 @@
+.error-message-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 14%;
+
+    &__section{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: aliceblue;
+        .title{
+            font: 21px arial bold;
+            color: red;
+            padding-bottom: 16px;
+        }
+        strong{
+            color: yellow;
+        }
+    }
+}

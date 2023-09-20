@@ -1,6 +1,18 @@
-<p>home works!</p>
+<nav
+  style="
+    background-color: #1a1c20;
+    height: 80px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  "
+>
+  <span style="font: 24px bold; color: white;"> {{ title }} </span>
+  <span style="font: 20px bold; color: white;">Type</span>
+  <span style="font: 20px bold; color: white;">Plot</span>
+  <app-search (searchEvent)="search($event)"></app-search>
+</nav>
 
 
-<app-movies-list></app-movies-list>
+<app-movies-list [movies]="movies$|async"></app-movies-list>
 
-<a routerLink="movie/38">movie datails</a>
