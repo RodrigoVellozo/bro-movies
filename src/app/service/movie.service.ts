@@ -21,20 +21,27 @@ export class MovieService {
   constructor(private _http: HttpClient, private _snackbar: MatSnackBar) {}
 
   public getMovies(search?: string) {
-    if (!search) search = "batman";
+    if (!search) search = 'batman';
     return this._http.get<any>(`${this.API_URL}s=${search}`).pipe(
-      map((res) => {
-        return res.Search
-      }),
+      map((res) => res.Search),
       catchError((err) => {
-        this._snackbar.open(
-          'Falha ao carregar o recurso.',
-          'Fechar',
-          {
-            verticalPosition: this.verticalPosition,
-            horizontalPosition: this.horizontalPosition,
-          }
-        );
+        this._snackbar.open('Falha ao carregar o recurso.', 'Fechar', {
+          verticalPosition: this.verticalPosition,
+          horizontalPosition: this.horizontalPosition,
+        });
+        return throwError(() => err);
+      })
+    );
+  }
+
+  public getMovie(imdbID: string) {
+    return this._http.get<any>(`${this.API_URL}i=${imdbID}`).pipe(
+      map((res) => res),
+      catchError((err) => {
+        this._snackbar.open('Falha ao carregar o recurso.', 'Fechar', {
+          verticalPosition: this.verticalPosition,
+          horizontalPosition: this.horizontalPosition,
+        });
         return throwError(() => err);
       })
     );

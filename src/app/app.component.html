@@ -1,14 +1,15 @@
 <nav
   style="
-    background-color: rgb(127, 172, 255);
+    background-color: #1a1c20;
     height: 80px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
   "
 >
-  <span style="font: 24px bold;"> {{ title }} </span>
-
+  <span style="font: 24px bold; color: white;"> {{ title }} </span>
+  <span style="font: 20px bold; color: white;">Type</span>
+  <span style="font: 20px bold; color: white;">Plot</span>
   <app-search (searchEvent)="search($event)"></app-search>
 </nav>
 
@@ -21,8 +22,8 @@
       <article
         style="display: flex; justify-content: center; flex-direction: column"
       >
-        <section>
-          <a [routerLink]="movie.Title">
+        <section style="color: aliceblue;">
+          <a (click)="getMovieDetails(movie.imdbID)">
             <img style="border-radius: 10px;" [src]="movie.Poster" width="150" alt="sem imagem" />
           </a>
         </section>
@@ -43,9 +44,9 @@
     <span style="font: 21px arial bold; color: red">
       Nenhum Titulo corresponde a sua pesquisa.
     </span>
-    <span> Experimente esta sugestao: </span>
+    <span style="color: aliceblue;"> Experimente esta sugestao: </span>
     <ul>
-      <li>coloque o titulo pesquisado: <strong>nome_do_filme</strong>, em ingles.</li>
+      <li style="color: aliceblue;">coloque o titulo pesquisado: <strong>nome_do_filme</strong>, em ingles.</li>
     </ul>
   </div>
 </ng-template>

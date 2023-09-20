@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { Observable, of, switchMap } from 'rxjs';
+import { Observable, of, switchMap, tap } from 'rxjs';
 import { MovieService } from './service/movie.service';
 
 @Component({
@@ -26,5 +26,9 @@ export class AppComponent implements OnInit {
         return of(movies);
       })
     );
+  }
+
+  getMovieDetails(imdbID: string){
+    this._movieService.getMovie(imdbID).pipe(tap(res=> console.log("respostinha: ",res))).subscribe();
   }
 }
