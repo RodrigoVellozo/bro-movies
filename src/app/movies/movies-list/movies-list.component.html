@@ -1,19 +1,18 @@
-<div
-  class="movies-list-content"
-  *ngIf="movies !== undefined; else emptyTemplate"
->
+<app-navbar>
+  <span>BrouMovies</span>
+  <app-search (searchEvent)="search($event)"></app-search>
+</app-navbar>
+
+<div class="movies-list" *ngIf="movies$ | async as movies; else emptyTemplate">
   <ul *ngFor="let movie of movies">
     <li>
-      <article class="movies-list-content__article">
-        <section class="movies-list-content__article__section">
-          <a [routerLink]="['movie/', movie.imdbID]">
-            <img
-              [src]="movie.Poster"
-              alt="sem imagem"
-            />
+      <article class="movies-list__article">
+        <section class="movies-list__article__section">
+          <a [routerLink]="[movie.imdbID]">
+            <img [src]="movie.Poster" alt="sem imagem" />
           </a>
         </section>
-        <p>{{movie.Title}}</p>
+        <p>{{ movie.Title }}</p>
       </article>
     </li>
   </ul>
@@ -21,6 +20,6 @@
 
 <ng-template #emptyTemplate>
   <app-error-message-content
-    [title]="titleNotFound"
+    [title]="(titleNotFound$ | async)!"
   ></app-error-message-content>
 </ng-template>

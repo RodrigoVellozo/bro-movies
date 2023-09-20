@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { MovieService } from 'src/app/shared/services/movie.service';
+import { MovieService } from 'src/app/core/services/movie.service';
+
 
 @Component({
   selector: 'app-movies-details',

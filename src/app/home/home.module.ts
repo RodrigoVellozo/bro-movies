@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { MoviesModule } from '../movies/movies.module';
-import { SharedModule } from '../shared/shared.module';
+import { SearchComponent } from '../ui/components/search/search.component';
 
 
 @NgModule({
@@ -14,8 +14,7 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     HomeRoutingModule,
-    MoviesModule,
-    SharedModule
+    SearchComponent
   ]
 })
 export class HomeModule { }

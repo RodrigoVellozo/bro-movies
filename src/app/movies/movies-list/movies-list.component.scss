@@ -1,4 +1,4 @@
-.movies-list-content {
+.movies-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -26,4 +26,7 @@
     }
   }
 }
-
+span{
+  color: aliceblue;
+  font-size: 32px ;
+}
