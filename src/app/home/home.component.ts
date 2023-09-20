@@ -10,6 +10,8 @@ import { Observable, of, switchMap } from 'rxjs';
 })
 export class HomeComponent implements OnInit {
   title = 'BrouVideos';
+  
+  public titleNotFound: string = '';
 
   public movies$!: Observable<any>;
 
@@ -22,6 +24,9 @@ export class HomeComponent implements OnInit {
   search(event: string) {
     this.movies$ = this._movieService.getMovies(event).pipe(
       switchMap((movies) => {
+        console.log('movies ', movies)
+        console.log('event ', event)
+        movies === undefined ? this.titleNotFound = event: this.titleNotFound = '';
         return of(movies);
       })
     );

@@ -12,6 +12,9 @@ export class MoviesListComponent {
   @Input()
   public movies: any[] = [];
 
+  @Input()
+  public titleNotFound: string = '';
+
   constructor() {}
 
 }
