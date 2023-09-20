@@ -3,22 +3,27 @@
     background-color: rgb(127, 172, 255);
     height: 80px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
   "
 >
-  <span> {{title}} </span>
+  <span style="font: 24px bold;"> {{ title }} </span>
 
   <app-search (searchEvent)="search($event)"></app-search>
 </nav>
 
-<div style="display: flex; flex-wrap: wrap; justify-content: center;">
+<div
+  style="display: flex; flex-wrap: wrap; justify-content: center"
+  *ngIf="(movies$|async) !== undefined as movies; else emptyTemplate"
+>
   <ul *ngFor="let movie of movies$ | async">
     <li>
-      <article style="display: flex; justify-content: center; flex-direction: column">
+      <article
+        style="display: flex; justify-content: center; flex-direction: column"
+      >
         <section>
-          <a href="">
-            <img [src]="movie.Poster" width="150" alt="sem imagem" />
+          <a [routerLink]="movie.Title">
+            <img style="border-radius: 10px;" [src]="movie.Poster" width="150" alt="sem imagem" />
           </a>
         </section>
       </article>
@@ -26,5 +31,23 @@
   </ul>
 </div>
 
+<ng-template #emptyTemplate>
+  <div
+    style="
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    "
+  >
+    <span style="font: 21px arial bold; color: red">
+      Nenhum Titulo corresponde a sua pesquisa.
+    </span>
+    <span> Experimente esta sugestao: </span>
+    <ul>
+      <li>coloque o titulo pesquisado: <strong>nome_do_filme</strong>, em ingles.</li>
+    </ul>
+  </div>
+</ng-template>
 
 <router-outlet></router-outlet>
