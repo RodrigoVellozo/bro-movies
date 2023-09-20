@@ -8,9 +8,10 @@ import { MatInputModule } from '@angular/material/input';
 import { SearchComponent } from './ui/search/search.component';
 import { NavbarComponent } from './ui/navbar/navbar.component';
 import { ErrorMessageContentComponent } from './ui/error-message-content/error-message-content.component';
+import { CardComponent } from './ui/card/card.component';
 
 @NgModule({
-  declarations: [SearchComponent, NavbarComponent, ErrorMessageContentComponent],
+  declarations: [SearchComponent, NavbarComponent, ErrorMessageContentComponent, CardComponent],
   imports: [
     CommonModule,
     MatInputModule,
@@ -19,6 +20,6 @@ import { ErrorMessageContentComponent } from './ui/error-message-content/error-m
     MatButtonModule,
     ReactiveFormsModule
   ],
-  exports: [SearchComponent, NavbarComponent, ErrorMessageContentComponent],
+  exports: [SearchComponent, NavbarComponent, ErrorMessageContentComponent, CardComponent],
 })
 export class SharedModule {}

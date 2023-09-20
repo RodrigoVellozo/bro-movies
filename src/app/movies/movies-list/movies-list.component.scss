@@ -1,3 +1,29 @@
-ul{
+.movies-list-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  ul {
     list-style: none;
+    max-width: 200px;
+  }
+  &__article {
+    display: flex;
+    justify-content: center;
+    flex-direction: column; 
+    p{
+        text-align: center;
+        word-wrap: break-word;
+        color: aliceblue;
+        font-size: 16px;
+    }
+    &__section {
+      color: aliceblue;
+      img{
+        border-radius: 10px;
+        width: 200px;
+        height: 297px;
+      }
+    }
+  }
 }
+

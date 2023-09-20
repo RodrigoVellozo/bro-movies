@@ -1,23 +1,26 @@
-
 <div
-  style="display: flex; flex-wrap: wrap; justify-content: center"
+  class="movies-list-content"
   *ngIf="movies !== undefined; else emptyTemplate"
 >
   <ul *ngFor="let movie of movies">
     <li>
-      <article
-        style="display: flex; justify-content: center; flex-direction: column"
-      >
-        <section style="color: aliceblue;">
-          <a [routerLink]="['movie/',movie.imdbID]">
-            <img style="border-radius: 10px;" [src]="movie.Poster" width="150" alt="sem imagem" />
+      <article class="movies-list-content__article">
+        <section class="movies-list-content__article__section">
+          <a [routerLink]="['movie/', movie.imdbID]">
+            <img
+              [src]="movie.Poster"
+              alt="sem imagem"
+            />
           </a>
         </section>
+        <p>{{movie.Title}}</p>
       </article>
     </li>
   </ul>
 </div>
 
 <ng-template #emptyTemplate>
-  <app-error-message-content [title]="titleNotFound"></app-error-message-content>
+  <app-error-message-content
+    [title]="titleNotFound"
+  ></app-error-message-content>
 </ng-template>
