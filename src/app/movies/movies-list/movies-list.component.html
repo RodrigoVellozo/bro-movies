@@ -3,7 +3,8 @@
   <app-search (searchEvent)="search($event)"></app-search>
 </app-navbar>
 
-<div class="movies-list" *ngIf="movies$ | async as movies; else emptyTemplate">
+<!-- cards sem o material :: descomentar o css -->
+<!-- <div class="movies-list" *ngIf="movies$ | async as movies; else emptyTemplate">
   <ul *ngFor="let movie of movies">
     <li>
       <article class="movies-list__article">
@@ -16,6 +17,12 @@
       </article>
     </li>
   </ul>
+</div> -->
+
+<div class="movies-list" *ngIf="movies$ | async as movies; else emptyTemplate">
+  <ng-container *ngFor="let movie of movies">
+    <app-card [movie]="movie"></app-card>
+  </ng-container>
 </div>
 
 <ng-template #emptyTemplate>

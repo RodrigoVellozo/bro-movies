@@ -1,66 +1,15 @@
-// .card{
-//   background: aliceblue;
-//   width: 70%;
-
-
-//   &__header{
-//     background: bisque;
-//   }
- 
-//   &__content{
-//     background: rgb(236, 177, 241);
-//     display: flex;
-    
-//     img{
-//       margin-top: 10px;
-//       width: 300px; height: 450px;
-//       border-radius: 30px;
-//       box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
-//     }
-//     &__section{
-//       background: rgb(236, 182, 116);
-//       display: flex;
-//       align-items: center;
-//       flex-direction: column;
-//       padding: 30px;
-//       span{
-//         width: 70%;
-//         text-align: center;
-//       }
-//     }
-//     &__info{
-//       min-width: 40%;
-//       background: yellowgreen;
-//       display: flex;
-//       flex-direction: column;
-//       justify-content: center;
-//     }
-//   }
-// }
-
-.container {
-  margin: 20px auto;
-}
-
-.img-fluid {
-  width: 100%
-}
-
-
-.similar-poster {
-  width: 500px;
-  height: 300px;
-  object-fit: cover;
-}
-
-.card-img-overlay {
-  background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 30%);
-}
-
-.card-title {
-  color: #fff;
-}
-
-.badge {
-  margin-right: 5px;
+.card {
+  max-width: 200px;
+  box-shadow: 10px 10px 12px -10px rgba(86,64,230,1);
+  cursor: pointer;
+  img {
+    width: 200px;
+    height: 297px;
+  }
+  mat-card-title,
+  mat-card-subtitle {
+    font-size: 16px;
+    text-align: center;
+    color: black;
+  }
 }

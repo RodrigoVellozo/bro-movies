@@ -13,7 +13,7 @@ export class ConvertMinToHoursPipe implements PipeTransform {
       const minutes = time % 60;
       return `${hours}h ${minutes} min`;
     }
-    return null;
+    return "N/A";
   }
 
 }
