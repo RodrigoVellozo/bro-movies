@@ -2,6 +2,7 @@
 Status do Projeto: Em desenvolvimento :warning:
 
 Preview:
+
 <img src="./src/assets/img/preview.gif" width="700">
 
 
