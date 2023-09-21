@@ -19,7 +19,7 @@
             <p>Runtime {{ movie.Runtime | convertMinToHours }}</p>
           </strong>
           <strong>
-            <p>Year {{ movie.Year }}</p>
+            <p>Year {{ movie.Year | assertDate }}</p>
           </strong>
         </span>
       </div>

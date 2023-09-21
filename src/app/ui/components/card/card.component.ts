@@ -8,6 +8,7 @@ import { Router, RouterModule } from '@angular/router';
 import { Movie } from 'src/app/core/models/movie';
 import { ConvertMinToHoursPipe } from '../../pipes/convert-min-to-hours.pipe';
 import { EllipsisPipe } from '../../pipes/ellipsis.pipe';
+import { AssertDatePipe } from '../../pipes/assert-date.pipe';
 
 @Component({
   standalone: true,
@@ -16,6 +17,7 @@ import { EllipsisPipe } from '../../pipes/ellipsis.pipe';
     ConvertMinToHoursPipe,
     RouterModule,
     EllipsisPipe,
+    AssertDatePipe,
     MatChipsModule,
     MatCardModule,
     MatButtonModule,

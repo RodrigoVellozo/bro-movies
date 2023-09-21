@@ -4,7 +4,7 @@
             <img mat-card-image [src]="movie.Poster" [alt]="movie.Title" />
             <mat-card-content [matTooltip]="movie.Title" >
                 <mat-card-title>{{ movie.Title | ellipsis }}</mat-card-title>
-                <mat-card-subtitle>{{ movie.Year }}</mat-card-subtitle>
+                <mat-card-subtitle>{{ movie.Year | assertDate }}</mat-card-subtitle>
             </mat-card-content>
         </mat-card>
     </section>
