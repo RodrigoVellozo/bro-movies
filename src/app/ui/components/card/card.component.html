@@ -1,34 +1,52 @@
-<ng-container *ngIf="movie">
-  <mat-card class="example-card">
-    <mat-card-header>
-      <mat-card-title>{{ movie.Title }}</mat-card-title>
-      <mat-card-subtitle>Ano: {{ movie.Year }}</mat-card-subtitle>
-    </mat-card-header>
+<div class="card" *ngIf="movie">
+  <div class="card__header">
+    <div>
+      <h1>
+        {{ movie.Title }}
+      </h1>
+    </div>
 
-    <img mat-card-image [src]="movie.Poster" [alt]="movie.title" />
+    <div>
+      <h4>
+        IMDb: {{ movie.imdbRating }} {{ movie.Runtime | convertMinToHours }}
+        {{ movie.Year }}
+      </h4>
+    </div>
 
-    <mat-card-content>
-      <p>
+    <div>
+      <mat-chip-listbox aria-label="genre selection">
+        <ng-container *ngFor="let genre of split(movie.Genre)">
+          <mat-chip>
+            {{ genre }}
+          </mat-chip>
+        </ng-container>
+      </mat-chip-listbox>
+    </div>
+  </div>
+
+  <div class="card__content">
+    <div class="card__content__section">
+      <span>
         {{ movie.Plot }}
-      </p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-button>LIKE</button>
-      <button mat-button>SHARE</button>
-    </mat-card-actions>
+      </span>
 
-    "Released": {{ movie.Released }} <br />
-    "Runtime": {{ movie.Runtime }} <br />
-    "Genre": {{ movie.Genre }} <br />
-    "Director": {{ movie.Director }} <br />
-    "Writer": {{ movie.Writer }} <br />
-    "Actors": {{ movie.Actors }} <br />
-    "Plot": {{ movie.Plot }} <br />
-    "Language": {{ movie.Language }} <br />
-    "Country": {{ movie.Country }} <br />
-    "Awards": {{ movie.Awards }} <br />
-    "Type": {{ movie.Type }}
-  </mat-card>
-</ng-container>
+      <img mat-card-image [src]="movie.Poster" [alt]="movie.title" />
+    </div>
 
-  
+    <div class="card__content__info">
+      <ul>
+        <li><strong>Released:</strong> {{ movie.Released }}</li>
+        <!-- <li><strong>Runtime:</strong> {{ movie.Runtime | convertMinToHours }}</li> -->
+        <!-- <li><strong>Genre:</strong> {{ movie.Genre }}</li> -->
+        <li><strong>Director:</strong> {{ movie.Director }}</li>
+        <li><strong>Writer:</strong> {{ movie.Writer }}</li>
+        <li><strong>Actors:</strong> {{ movie.Actors }}</li>
+        <!-- <li><strong>Plot:</strong> {{ movie.Plot }}</li> -->
+        <li><strong>Language:</strong> {{ movie.Language }}</li>
+        <li><strong>Country:</strong> {{ movie.Country }}</li>
+        <li><strong>Awards:</strong> {{ movie.Awards }}</li>
+        <li><strong>Type:</strong> {{ movie.Type }}</li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,8 +1,36 @@
-.example-card {
-    max-width: 300px;
+.card{
+  background: aliceblue;
+  width: 70%;
+
+
+  &__header{
+    background: bisque;
   }
-  
-  .example-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-    background-size: cover;
+ 
+  &__content{
+    background: rgb(236, 177, 241);
+    display: flex;
+    
+    img{
+      margin-top: 10px;
+      width: 300px; height: 450px;
+      border-radius: 30px;
+      box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+    }
+    &__section{
+      background: rgb(236, 182, 116);
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding: 30px;
+      span{
+        width: 70%;
+        text-align: center;
+      }
+    }
+    &__info{
+      min-width: 40%;
+      background: yellowgreen;
+    }
   }
+}
