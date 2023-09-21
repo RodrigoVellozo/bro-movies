@@ -1,4 +1,9 @@
 # VistoChallenge
+Status do Projeto: Em desenvolvimento :warning:
+
+Preview:
+<img src="./src/assets/img/preview.gif" width="700">
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.5.
 

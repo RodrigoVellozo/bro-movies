@@ -1,11 +1,9 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 
+import { SearchComponent } from '../ui/components/search/search.component';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
-import { MoviesModule } from '../movies/movies.module';
-import { SearchComponent } from '../ui/components/search/search.component';
-
 
 @NgModule({
   declarations: [

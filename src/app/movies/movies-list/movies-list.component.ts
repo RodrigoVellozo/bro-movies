@@ -10,8 +10,6 @@ import { MovieService } from 'src/app/core/services/movie.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MoviesListComponent {
-
-  
   readonly search$ = new BehaviorSubject<string>('');
   
   readonly movies$ = this.search$.pipe(

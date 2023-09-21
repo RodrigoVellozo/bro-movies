@@ -1,23 +1,28 @@
 .error-message-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 14%;
+
+  &__section {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    padding: 14%;
-
-    &__section{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        color: aliceblue;
-        font-size: 22px;
-        .title{
-            font: 32px arial bold;
-            color: red;
-            padding-bottom: 16px;
-        }
-        strong{
-            color: yellow;
-        }
+    color: aliceblue;
+    font-size: 22px;
+    .title {
+      font: 32px arial bold;
+      color: red;
+      padding-bottom: 16px;
     }
+    strong {
+      color: yellow;
+    }
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+  }
 }
