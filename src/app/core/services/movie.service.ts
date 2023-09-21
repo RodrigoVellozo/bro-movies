@@ -1,12 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { catchError, map, throwError } from 'rxjs';
+import { Observable, catchError, map, throwError } from 'rxjs';
 
 import {
   MatSnackBarHorizontalPosition,
   MatSnackBarVerticalPosition,
 } from '@angular/material/snack-bar';
+import { Movie } from '../models/movie';
+import { MovieDetail } from '../models/movie-detail';
 
 @Injectable({
   providedIn: 'root',
@@ -20,10 +22,10 @@ export class MovieService {
 
   constructor(private _http: HttpClient, private _snackbar: MatSnackBar) {}
 
-  public getMovies(search?: string) {
+  public getMovies(search?: string): Observable<Array<Movie>> {
     if (!search) search = 'one piece';
-    return this._http.get<any>(`${this.API_URL}s=${search}`).pipe(
-      map((res) => res.Search),
+    return this._http.get<Observable<Array<Movie>>>(`${this.API_URL}s=${search}`).pipe(
+      map((res:any) => res.Search),
       catchError((err) => {
         this._snackbar.open('Falha ao carregar o recurso.', 'Fechar', {
           verticalPosition: this.verticalPosition,
@@ -34,9 +36,9 @@ export class MovieService {
     );
   }
 
-  public getMovie(imdbID: string) {
-    return this._http.get<any>(`${this.API_URL}i=${imdbID}`).pipe(
-      map((res) => res),
+  public getMovie(imdbID: string):Observable<MovieDetail> {
+    return this._http.get<Observable<MovieDetail>>(`${this.API_URL}i=${imdbID}`).pipe(
+      map((res: any) => res),
       catchError((err) => {
         this._snackbar.open('Falha ao carregar o recurso.', 'Fechar', {
           verticalPosition: this.verticalPosition,

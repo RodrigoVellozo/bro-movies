@@ -1,2 +1,62 @@
-<app-card [movie]="movie$ | async"></app-card>
-
+<ng-container *ngIf="movie$ | async as movie">
+  <div class="card">
+    <div class="header">
+      <div class="header__button">
+        <button mat-fab color="primary" routerLink="/">
+          <mat-icon>home</mat-icon>
+        </button>
+      </div>
+      <div class="header__title">
+        <h1>
+          {{ movie.Title }}
+          <small>{{movie.Rated}}</small>
+        </h1>
+        <span>
+          <strong>
+            <p>IMDb {{ movie.imdbRating }}</p>
+          </strong>
+          <strong>
+            <p>Runtime {{ movie.Runtime | convertMinToHours }}</p>
+          </strong>
+          <strong>
+            <p>Year {{ movie.Year }}</p>
+          </strong>
+        </span>
+      </div>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="content">
+      <div class="content__left">
+        <img [src]="movie.Poster" [alt]="movie.Title" />
+      </div>
+      <div class="content__right">
+        <mat-chip-listbox>
+          <ng-container *ngFor="let genre of movie.Genre | split">
+            <mat-chip class="animation">
+              {{ genre }}
+            </mat-chip>
+          </ng-container>
+        </mat-chip-listbox>
+        <h2>Plot</h2>
+        <div>
+          <p>{{ movie.Plot }}</p>
+        </div>
+        <h2>Ratings</h2>
+        <div class="content__right__table">
+          <table mat-table [dataSource]="movie.Ratings">
+            <ng-container matColumnDef="source">
+              <th mat-header-cell *matHeaderCellDef>Source</th>
+              <td mat-cell *matCellDef="let element">{{ element.Source }}</td>
+            </ng-container>
+            <ng-container matColumnDef="value">
+              <th mat-header-cell *matHeaderCellDef>Value</th>
+              <td mat-cell *matCellDef="let element">{{ element.Value }}</td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="columns"></tr>
+            <tr mat-row *matRowDef="let row; columns: columns"></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>

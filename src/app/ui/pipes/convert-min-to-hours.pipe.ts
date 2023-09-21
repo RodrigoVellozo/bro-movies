@@ -11,9 +11,7 @@ export class ConvertMinToHoursPipe implements PipeTransform {
     if (time) {
       const hours = Math.floor(time / 60);
       const minutes = time % 60;
-      const textoHoras = `00${hours}`.slice(-2);
-      const textoMinutos = `00${minutes}`.slice(-2);
-      return `${hours}h ${minutes}min`;
+      return `${hours}h ${minutes} min`;
     }
     return null;
   }

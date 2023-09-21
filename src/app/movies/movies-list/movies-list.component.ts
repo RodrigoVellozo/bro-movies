@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { BehaviorSubject, map, switchMap } from 'rxjs';
+import { BehaviorSubject, Observable, map, switchMap } from 'rxjs';
+import { Movie } from 'src/app/core/models/movie';
 import { MovieService } from 'src/app/core/services/movie.service';
 
 @Component({
@@ -29,7 +30,7 @@ export class MoviesListComponent {
     this.search$.next(search);
   }
   
-  private getMovies(event: string) {
+  private getMovies(event: string): Observable<Array<Movie>>{
     return this._movieService.getMovies(event);
   }
 }

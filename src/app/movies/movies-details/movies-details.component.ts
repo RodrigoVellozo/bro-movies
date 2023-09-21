@@ -1,5 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { MovieDetail } from 'src/app/core/models/movie-detail';
 import { MovieService } from 'src/app/core/services/movie.service';
 
 
@@ -10,10 +12,10 @@ import { MovieService } from 'src/app/core/services/movie.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MoviesDetailsComponent {
+  readonly columns = ['source', 'value'];
 
-  public readonly movie$ = this._movieService.getMovie(this._activatedRoute.snapshot.params['imdbID']);
+  readonly movie$: Observable<MovieDetail> = this._movieService.getMovie(this._activatedRoute.snapshot.params['imdbID']);
   
-  constructor(private _movieService: MovieService, private _activatedRoute: ActivatedRoute ) {
-    
-  }
+  constructor(private _movieService: MovieService, private _activatedRoute: ActivatedRoute ) {  }
+
 }

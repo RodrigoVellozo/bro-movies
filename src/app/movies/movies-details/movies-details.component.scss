@@ -1,3 +1,58 @@
-:host{
-    width: 80;
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  .header {
+    background: #e9e9e9;
+    border-radius: 20px 20px 0px 0px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 70%;
+    padding: 20px;
+    &__title {
+      width: 60%;
+      h1 {
+        font-size: 30px;
+      }
+      small {
+        color: brown;
+      }
+      span {
+        display: flex;
+        gap: 20px;
+        font-size: 16px;
+      }
+    }
+  }
+
+  .content {
+    background: #e9e9e9;
+    border-radius: 0px 0px 20px 20px;
+    display: flex;
+    justify-content: space-evenly;
+    width: 70%;
+    padding: 20px;
+    ::ng-deep .mdc-data-table__table {
+      min-width: 50% !important;
+    }
+    &__left {
+      width: 22%;
+      text-align: center;
+      img {
+        border-radius: 14px;
+        box-shadow: -3px 10px 26px 0px rgba(0, 0, 0, 0.75);
+      }
+    }
+    &__right {
+      width: 50%;
+      &__table {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
 }

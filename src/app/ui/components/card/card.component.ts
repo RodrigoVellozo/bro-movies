@@ -4,6 +4,7 @@ import { MatCardModule } from '@angular/material/card';
 import { ConvertMinToHoursPipe } from '../../pipes/convert-min-to-hours.pipe';
 import { MatButtonModule } from '@angular/material/button';
 import { MatChipsModule } from '@angular/material/chips';
+import { Movie } from 'src/app/core/models/movie';
 
 
 
@@ -22,15 +23,6 @@ import { MatChipsModule } from '@angular/material/chips';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CardComponent {
-  @Input() movie!: any;
-
-  public split(items: string) {
-    const splittedItems = items.split(',').map(item => item.trim());
-    return splittedItems;
-  }
-
-  public getRandomColor( ){
-
-  }
+  @Input() movie!: Movie;
 
 }

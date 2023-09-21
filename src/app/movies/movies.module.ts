@@ -9,8 +9,13 @@ import { MoviesRoutingModule } from './movies-routing.module';
 import { MoviesShellComponent } from './movies-shell/movies-shell.component';
 import { SearchComponent } from '../ui/components/search/search.component';
 import { NavbarComponent } from '../ui/components/navbar/navbar.component';
-
-
+import { ConvertMinToHoursPipe } from '../ui/pipes/convert-min-to-hours.pipe';
+import { SplitPipe } from '../ui/pipes/split.pipe';
+import {MatChipsModule} from '@angular/material/chips';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import {MatTableModule} from '@angular/material/table';
+import {MatDividerModule} from '@angular/material/divider';
 
 @NgModule({
   declarations: [
@@ -24,7 +29,14 @@ import { NavbarComponent } from '../ui/components/navbar/navbar.component';
     ErrorMessageContentComponent,
     CardComponent,
     SearchComponent,
-    NavbarComponent
+    NavbarComponent,
+    MatChipsModule,
+    ConvertMinToHoursPipe,
+    SplitPipe,
+    MatButtonModule,
+    MatIconModule,
+    MatTableModule,
+    MatDividerModule
   ],
   exports: [
     MoviesListComponent,
