@@ -6,8 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class AssertDatePipe implements PipeTransform {
 
-  transform(value: string, ...args: unknown[]): string {
-    
+  transform(value: string): string {
     if (value.length > 4 ) {
       const stringFormatada = value.replace('–','');
       console.log(stringFormatada);

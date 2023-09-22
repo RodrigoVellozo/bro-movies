@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { BehaviorSubject, Observable, map, switchMap } from 'rxjs';
 import { Movie } from 'src/app/core/models/movie';
 import { MovieService } from 'src/app/core/services/movie.service';
@@ -11,6 +12,7 @@ import { MovieService } from 'src/app/core/services/movie.service';
 })
 export class MoviesListComponent {
   readonly search$ = new BehaviorSubject<string>('');
+  readonly trackByMovie = (_: number, movie: Movie) => movie.imdbID;
   
   readonly movies$ = this.search$.pipe(
     switchMap((event) => this.getMovies(event))
@@ -22,6 +24,7 @@ export class MoviesListComponent {
 
   constructor(
     private _movieService: MovieService,
+    private _router: Router
   ) {}
 
   search(search: string){
@@ -31,4 +34,11 @@ export class MoviesListComponent {
   private getMovies(event: string): Observable<Array<Movie>>{
     return this._movieService.getMovies(event);
   }
+
+  public goHome(){
+    console.log('goHome');
+    this._router.navigate(['/']);
+  }
+
+
 }

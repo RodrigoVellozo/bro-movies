@@ -1,5 +1,5 @@
 <app-navbar>
-  <img src="assets/img/logo.png" alt="logo" width="50">
+  <img src="assets/img/logo.png" alt="logo" width="50" (click)="goHome()">
   <span>BrouMovies</span>
   <app-search (searchEvent)="search($event)"></app-search>
 </app-navbar>
@@ -21,7 +21,7 @@
 </div> -->
 
 <div class="movies-list" *ngIf="movies$ | async as movies; else emptyTemplate">
-  <ng-container *ngFor="let movie of movies">
+  <ng-container *ngFor="let movie of movies; trackBy: trackByMovie">
     <app-card [movie]="movie"></app-card>
   </ng-container>
 </div>

@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class ConvertMinToHoursPipe implements PipeTransform {
 
-  transform(value: string, ...args: unknown[]): string {
+  transform(value: string): string {
     let time = parseInt(value.split(' ')[0]);
     if (time) {
       const hours = Math.floor(time / 60);
