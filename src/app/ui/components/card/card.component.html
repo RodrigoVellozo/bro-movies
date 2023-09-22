@@ -1,7 +1,7 @@
 <article class="card" (click)="openDetails(movie.imdbID)"  >
     <section>
         <mat-card>
-            <img mat-card-image [src]="movie.Poster" [alt]="movie.Title" />
+            <img mat-card-image [src]="movie.Poster | imageNotFound" [alt]="movie.Title" />
             <mat-card-content [matTooltip]="movie.Title" >
                 <mat-card-title>{{ movie.Title | ellipsis }}</mat-card-title>
                 <mat-card-subtitle>{{ movie.Year | assertDate }}</mat-card-subtitle>

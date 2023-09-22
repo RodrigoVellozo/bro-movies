@@ -17,6 +17,7 @@ import { MoviesListComponent } from './movies-list/movies-list.component';
 import { MoviesRoutingModule } from './movies-routing.module';
 import { MoviesShellComponent } from './movies-shell/movies-shell.component';
 import { AssertDatePipe } from '../ui/pipes/assert-date.pipe';
+import { ImageNotFoundPipe } from '../ui/pipes/image-not-found.pipe';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { AssertDatePipe } from '../ui/pipes/assert-date.pipe';
     ConvertMinToHoursPipe,
     SplitPipe,
     AssertDatePipe,
+    ImageNotFoundPipe,
     MatButtonModule,
     MatIconModule,
     MatTableModule,

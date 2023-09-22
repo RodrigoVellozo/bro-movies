@@ -27,7 +27,7 @@
     <mat-divider></mat-divider>
     <div class="content">
       <div class="content__left">
-        <img [src]="movie.Poster" [alt]="movie.Title" />
+        <img [src]="movie.Poster | imageNotFound" [alt]="movie.Title" />
       </div>
       <div class="content__right">
         <mat-chip-listbox>

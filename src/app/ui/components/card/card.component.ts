@@ -9,6 +9,7 @@ import { Movie } from 'src/app/core/models/movie';
 import { ConvertMinToHoursPipe } from '../../pipes/convert-min-to-hours.pipe';
 import { EllipsisPipe } from '../../pipes/ellipsis.pipe';
 import { AssertDatePipe } from '../../pipes/assert-date.pipe';
+import { ImageNotFoundPipe } from '../../pipes/image-not-found.pipe';
 
 @Component({
   standalone: true,
@@ -18,6 +19,7 @@ import { AssertDatePipe } from '../../pipes/assert-date.pipe';
     RouterModule,
     EllipsisPipe,
     AssertDatePipe,
+    ImageNotFoundPipe,
     MatChipsModule,
     MatCardModule,
     MatButtonModule,
