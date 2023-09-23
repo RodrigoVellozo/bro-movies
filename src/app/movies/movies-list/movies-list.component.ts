@@ -36,7 +36,6 @@ export class MoviesListComponent {
   }
 
   public goHome(){
-    console.log('goHome');
     this._router.navigate(['/']);
   }
 
