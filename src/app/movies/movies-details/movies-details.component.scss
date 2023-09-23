@@ -53,8 +53,9 @@
         display: flex;
         justify-content: center;
       }
-      mat-chip{
-        background: aqua;
+      ::ng-deep .mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled) .mdc-evolution-chip__text-label{
+        color: #f50000 !important;
+        font: italic small-caps bold 16px Georgia, serif;
       }
     }
   }

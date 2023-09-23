@@ -18,4 +18,9 @@ export class MoviesDetailsComponent {
   
   constructor(private _movieService: MovieService, private _activatedRoute: ActivatedRoute ) {  }
 
+  getRandomColor(source: string): string {
+    console.log('source', (source.length*100)**5)
+    return `#${Math.floor(Math.random() * 10000000).toString(16)}`;
+    return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+  }
 }
